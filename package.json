@@ -1,0 +1,24 @@
+{
+  "name": "knowledge-site",
+  "version": "1.0.0",
+  "description": "基于 Next.js 的静态站点，用于展示作品与文章。",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "15.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "25.5.0",
+    "@types/react": "19.2.14",
+    "typescript": "5.9.3"
+  }
+}
