@@ -3,13 +3,18 @@ import { notFound } from "next/navigation";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
 
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function PostPage({ params }: any) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) notFound();
 
   const html = await markdownToHtml(post.content);
