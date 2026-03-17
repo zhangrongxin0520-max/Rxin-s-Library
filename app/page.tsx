@@ -8,6 +8,12 @@ import SkillCard from "@/components/SkillCard";
 
 export default async function HomePage() {
   const posts = getPosts();
+  const aiPosts = posts.filter(
+    (post) => post.tags && post.tags.includes("AI"),
+  );
+  const nonAiPosts = posts.filter(
+    (post) => !post.tags || !post.tags.includes("AI"),
+  );
 
   const docCnPath = path.join(
     process.cwd(),
@@ -169,7 +175,22 @@ export default async function HomePage() {
               Here, you'll find it easy under my words. ^^
           </p>
           <div className="post-grid">
-            {posts.map((post) => (
+            {nonAiPosts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="ai-notebook" className="section works">
+        <div className="container">
+          <h2 className="section-title">AI Notebook</h2>
+          <p className="section-intro">
+            Forget boring textbooks! Turn AI&apos;s &quot;mystery box&quot; into
+            easy-to-grasp stories.
+          </p>
+          <div className="post-grid">
+            {aiPosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>

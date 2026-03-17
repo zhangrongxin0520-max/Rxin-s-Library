@@ -22,7 +22,18 @@ function formatDate(dateString: string): string {
 export default function PostCard({ post }: PostCardProps) {
   return (
     <Link href={`/posts/${post.slug}`} className="post-card">
-      <h3 className="post-card-title">{post.title}</h3>
+      <div className="post-card-header-row">
+        {post.tags && post.tags.length > 0 && (
+          <div className="post-card-tags">
+            {post.tags.map((tag) => (
+              <span key={tag} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        <h3 className="post-card-title">{post.title}</h3>
+      </div>
       {post.description && (
         <p className="post-card-desc">{post.description}</p>
       )}
@@ -30,13 +41,6 @@ export default function PostCard({ post }: PostCardProps) {
         <time className="post-card-date" dateTime={post.date}>
           {formatDate(post.date)}
         </time>
-      )}
-      {post.tags && post.tags.length > 0 && (
-        <div className="post-card-tags">
-          {post.tags.map((tag) => (
-            <span key={tag} className="tag">{tag}</span>
-          ))}
-        </div>
       )}
     </Link>
   );
