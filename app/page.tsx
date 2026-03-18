@@ -165,6 +165,21 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section id="ai-notebook" className="section works">
+        <div className="container">
+          <h2 className="section-title">AI Notebook</h2>
+          <p className="section-intro">
+            Forget boring textbooks! Turn AI&apos;s &quot;mystery box&quot; into
+            easy-to-grasp stories.
+          </p>
+          <div className="post-grid">
+            {aiPosts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="works" className="section works">
         <div className="container">
           <h2 className="section-title">
@@ -176,21 +191,6 @@ export default async function HomePage() {
           </p>
           <div className="post-grid">
             {nonAiPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="ai-notebook" className="section works">
-        <div className="container">
-          <h2 className="section-title">AI Notebook</h2>
-          <p className="section-intro">
-            Forget boring textbooks! Turn AI&apos;s &quot;mystery box&quot; into
-            easy-to-grasp stories.
-          </p>
-          <div className="post-grid">
-            {aiPosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>

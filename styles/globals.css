@@ -70,12 +70,12 @@ a:hover {
 
 .prose p {
   margin-bottom: 1rem;
-  color: var(--text-muted);
+  color: #000000;
 }
 
 .prose ul, .prose ol {
   margin: 1rem 0 1rem 1.5rem;
-  color: var(--text-muted);
+  color: #000000;
 }
 
 .prose li {
@@ -88,7 +88,7 @@ a:hover {
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.9em;
-  color: var(--accent);
+  color: #000000;
 }
 
 .prose pre {
@@ -100,9 +100,33 @@ a:hover {
   border: 1px solid var(--border);
 }
 
+.prose pre.code-block {
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  border: 1px solid #c4b5fd;
+  background: #ffffff;
+  color: #6d28d9;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.code-copy-btn:hover {
+  background: #f5f3ff;
+}
+
 .prose pre code {
   background: none;
   padding: 0;
+  color: #000000;
 }
 
 .prose blockquote {
@@ -278,6 +302,18 @@ a:hover {
   background: rgba(91, 33, 182, 0.12);
   color: var(--accent);
   border-radius: 6px;
+}
+
+/* AI Notebook: make all post text purple */
+#ai-notebook .post-card-title,
+#ai-notebook .post-card-desc,
+#ai-notebook .post-card-date,
+#ai-notebook .tag {
+  color: #6d28d9;
+}
+
+#ai-notebook .tag {
+  background: rgba(109, 40, 217, 0.12);
 }
 
 /* About */

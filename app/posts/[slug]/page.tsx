@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
+import ProseWithCopy from "@/components/ProseWithCopy";
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
@@ -51,10 +52,7 @@ export default async function PostPage({
           )}
         </header>
 
-        <div
-          className="prose"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <ProseWithCopy html={html} />
       </div>
     </article>
   );
